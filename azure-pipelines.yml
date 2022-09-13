@@ -5,10 +5,10 @@ pool:
   vmImage: 'Ubuntu-18.04'
 
 variables:
-  resourcegroup: 'Quick-Starts-XXXXX'
-  workspace: 'quick-starts-ws-XXXXX'
+  resourcegroup: 'dlndz001-ml-product001'
+  workspace: 'azml-dev-ws'
   experiment: 'quick-starts-mlops'
-  aml_compute_target: 'gpucluster'
+  aml_compute_target: 'd2-v2-cluster'
   model_name: 'compliance-classifier'
   image_name: 'compliance-classifier-image'
 
