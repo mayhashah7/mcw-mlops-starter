@@ -38,7 +38,7 @@ steps:
   inputs:
     azureSubscription: 'MayhaConnect'
     scriptLocation: inlineScript
-    inlineScript: 'az upgrade'
+    inlineScript: 'az account list -o table'
 
 - task: AzureCLI@1
   displayName: 'Attach folder to workspace'
