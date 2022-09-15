@@ -29,14 +29,14 @@ steps:
 - task: AzureCLI@1
   displayName: 'Install the CLI'
   inputs:
-    azureSubscription: 'MayhaConnectHosted'
+    azureSubscription: 'MayhaConnect'
     scriptLocation: inlineScript
     inlineScript: 'az extension add -n azure-cli-ml'
 
 - task: AzureCLI@1
   displayName: 'Upgrade CLI'
   inputs:
-    azureSubscription: 'MayhaConnectHosted'
+    azureSubscription: 'MayhaConnect'
     scriptLocation: inlineScript
     inlineScript: 'az account list -o table'
 
@@ -50,7 +50,7 @@ steps:
 - task: AzureCLI@1
   displayName: 'Get or create AML Compute Target'
   inputs:
-    azureSubscription: 'MayhaConnectHosted'
+    azureSubscription: 'MayhaConnect'
     scriptLocation: inlineScript
     inlineScript: 'az ml run submit-script -d ./environment_setup/dependencies.yml 
     ./aml_service/create_aml_cluster.py --aml_compute_target $(aml_compute_target) 
@@ -59,7 +59,7 @@ steps:
 - task: AzureCLI@1
   displayName: 'Master Pipeline'
   inputs:
-    azureSubscription: 'MayhaConnectHosted'
+    azureSubscription: 'MayhaConnect'
     scriptLocation: inlineScript
     inlineScript: 'az ml run submit-script -d ./environment_setup/dependencies.yml 
     ./aml_service/pipelines_master.py --aml_compute_target $(aml_compute_target) 
