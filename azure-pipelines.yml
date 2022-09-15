@@ -34,11 +34,11 @@ steps:
     inlineScript: 'az extension add -n azure-cli-ml'
 
 - task: AzureCLI@1
-  displayName: 'Login'
+  displayName: 'Upgrade CLI'
   inputs:
     azureSubscription: 'MayhaConnect'
     scriptLocation: inlineScript
-    inlineScript: 'az devops login'
+    inlineScript: 'az upgrade'
 
 - task: AzureCLI@1
   displayName: 'Attach folder to workspace'
