@@ -31,7 +31,7 @@ steps:
   inputs:
     azureSubscription: 'MayhaConnect'
     scriptLocation: inlineScript
-    inlineScript: 'az extension add -n azure-cli-ml'
+    inlineScript: 'az extension add -n ml'
 
 - task: AzureCLI@1
   displayName: 'Workspace List Check'
