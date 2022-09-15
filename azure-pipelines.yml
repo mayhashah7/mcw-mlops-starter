@@ -34,11 +34,11 @@ steps:
     inlineScript: 'az extension add -n azure-cli-ml'
 
 - task: AzureCLI@1
-  displayName: 'Upgrade CLI'
+  displayName: 'Workspace List Check'
   inputs:
     azureSubscription: 'MayhaConnect'
     scriptLocation: inlineScript
-    inlineScript: 'az account list -o table'
+    inlineScript: 'az ml workspace show -n $(workspace) -g $(resourcegroup)'
 
 - task: AzureCLI@1
   displayName: 'Attach folder to workspace'
