@@ -38,7 +38,7 @@ steps:
   inputs:
     azureSubscription: 'MayhaConnect'
     scriptLocation: inlineScript
-    inlineScript: 'az login'
+    inlineScript: 'az devops login'
 
 - task: AzureCLI@1
   displayName: 'Attach folder to workspace'
